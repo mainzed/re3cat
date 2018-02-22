@@ -2,7 +2,6 @@ package link.labeling.retcat.run;
 
 import link.labeling.retcat.config.POM_retcat;
 import link.labeling.retcat.log.Logging;
-import link.labeling.retcat.database.RetCatDatabase;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileOutputStream;
@@ -33,13 +32,6 @@ public class Main {
             System.out.println(Logging.getMessageJSON(e, "link.labeling.retcat.run.Main"));
         }
         String databaseinfo = "";
-        try {
-            databaseinfo = RetCatDatabase.getTestById(Integer.parseInt("1")).toJSONString();
-            System.out.println(databaseinfo);
-        } catch (Exception e) {
-            databaseinfo = Logging.getMessageJSON(e, "link.labeling.retcat.run.Main");
-            System.out.println(Logging.getMessageJSON(e, "link.labeling.retcat.run.Main"));
-        } 
         try {
             File file = new File("main.txt");
             String path = file.getCanonicalPath();
