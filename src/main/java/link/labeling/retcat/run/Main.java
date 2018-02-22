@@ -29,16 +29,16 @@ public class Main {
             libinfo = POM_retcat.getInfo().toJSONString();
             System.out.println(libinfo);
         } catch (Exception e) {
-            libinfo = Logging.getMessageJSON(e, "de.rgzm.foolib.run.Main");
-            System.out.println(Logging.getMessageJSON(e, "de.rgzm.foolib.run.Main"));
+            libinfo = Logging.getMessageJSON(e, "link.labeling.retcat.run.Main");
+            System.out.println(Logging.getMessageJSON(e, "link.labeling.retcat.run.Main"));
         }
         String databaseinfo = "";
         try {
             databaseinfo = RetCatDatabase.getTestById(Integer.parseInt("1")).toJSONString();
             System.out.println(databaseinfo);
         } catch (Exception e) {
-            databaseinfo = Logging.getMessageJSON(e, "de.rgzm.foolib.run.Main");
-            System.out.println(Logging.getMessageJSON(e, "de.rgzm.foolib.run.Main"));
+            databaseinfo = Logging.getMessageJSON(e, "link.labeling.retcat.run.Main");
+            System.out.println(Logging.getMessageJSON(e, "link.labeling.retcat.run.Main"));
         } 
         try {
             File file = new File("main.txt");
@@ -51,7 +51,7 @@ public class Main {
                 out.flush();
             }
         } catch (IOException e) {
-            System.out.println(Logging.getMessageJSON(e, "de.rgzm.foolib.run.Main"));
+            System.out.println(Logging.getMessageJSON(e, "link.labeling.retcat.run.Main"));
         }
     }
 

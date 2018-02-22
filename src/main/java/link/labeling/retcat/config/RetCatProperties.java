@@ -11,7 +11,7 @@ import java.util.Properties;
 public class RetCatProperties {
 
 	private static final Properties prop = new Properties();
-	private static final String fileName = "foolib.properties";
+	private static final String fileName = "retcat.properties";
 
 	/**
      * load properties file
