@@ -1,0 +1,15 @@
+{
+	"narrowerTerms": [],
+	"scheme": "Union List of Artist Names",
+	"description": "Leonardo was born near Vinci, at Anchiano. He is known as the founder of the High Renaissance style. His work was extremely influential for contemporary and later artists. His writings on art and perception codified the ideals of representation and expression that dominated European teaching for the next 400 years. He is famed for his drawing of figures, representations of landscape, depiction of aerial perspective and space, the use of light and shade (chiaroscuro), and the evocation of the sitters' characters. He was also known for inventions in architecture and engineering. He often left his works unfinished, apparently losing interest after the conception of the idea. Among his best known surviving works are the \"Last Supper\" fresco in Milan and the \"Mona Lisa\" portrait in the Louvre, Paris.",
+	"broaderTerms": [{
+		"label": "Persons, Artists",
+		"uri": "http://vocab.getty.edu/ulan/500000002"
+	}],
+	"label": "Leonardo da Vinci",
+	"lang": null,
+	"type": "getty",
+	"uri": "http://vocab.getty.edu/ulan/500010879",
+	"quality": "high",
+	"group": "common reference thesauri (CH)"
+}

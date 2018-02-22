@@ -1,0 +1,15 @@
+{
+	"narrowerTerms": [],
+	"scheme": "Thesaurus of Geographic Names",
+	"description": "Rheinland-Pfalz, Deutschland, Europe, World",
+	"broaderTerms": [{
+		"label": "Rheinland-Pfalz",
+		"uri": "http://vocab.getty.edu/tgn/7003682"
+	}],
+	"label": "Mainz",
+	"lang": "en",
+	"type": "getty",
+	"uri": "http://vocab.getty.edu/tgn/7004449",
+	"quality": "high",
+	"group": "common reference thesauri (CH)"
+}

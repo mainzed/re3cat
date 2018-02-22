@@ -1,0 +1,15 @@
+{
+	"narrowerTerms": [],
+	"scheme": "Art and Architecture Thesaurus",
+	"description": "The fruit of trees in the Malus genus. Domestic apples are usually green, red, or yellow, cultivated in temperate zones worldwide in a multitude of varieties.",
+	"broaderTerms": [{
+		"label": "pome",
+		"uri": "http://vocab.getty.edu/aat/300266432"
+	}],
+	"label": "apple (fruit)",
+	"lang": "en",
+	"type": "getty",
+	"uri": "http://vocab.getty.edu/aat/300266417",
+	"quality": "high",
+	"group": "common reference thesauri (CH)"
+}
