@@ -1,6 +1,6 @@
-package de.rgzm.foolib.tests;
+package link.labeling.retcat.tests;
 
-import de.rgzm.foolib.tests.HelloWorld;
+import link.labeling.retcat.tests.HelloWorld;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;

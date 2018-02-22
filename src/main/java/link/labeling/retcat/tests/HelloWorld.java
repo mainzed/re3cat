@@ -1,4 +1,4 @@
-package de.rgzm.foolib.tests;
+package link.labeling.retcat.tests;
 
 /**
  * Hallo World testing Class

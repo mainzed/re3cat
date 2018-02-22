@@ -1,4 +1,4 @@
-package de.rgzm.foorlib.database;
+package link.labeling.retcat.database;
 
 import java.io.IOException;
 import java.sql.*;
@@ -8,7 +8,7 @@ import org.json.simple.JSONObject;
  * Class for connection to the test database
  * @author thiery
  */
-public class FoolibDatabase {
+public class RetCatDatabase {
 
 	private static Connection connection;
 

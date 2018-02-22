@@ -1,6 +1,6 @@
-package de.rgzm.foolib.database;
+package link.labeling.retcat.database;
 
-import de.rgzm.foorlib.database.FoolibDatabase;
+import link.labeling.retcat.database.RetCatDatabase;
 import org.json.simple.JSONObject;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -14,9 +14,9 @@ import testconfig.TestConfig;
  * Testing Class
  * @author thiery
  */
-public class FoolibDatabaseTest {
+public class RetCatDatabaseTest {
 
-    public FoolibDatabaseTest() {
+    public RetCatDatabaseTest() {
     }
 
     @BeforeClass
@@ -39,15 +39,15 @@ public class FoolibDatabaseTest {
     public void testOpenAndCloseDatabase() throws Exception {
         org.junit.Assume.assumeTrue(TestConfig.LOCALHOST);
         System.out.println("testOpenAndCloseDatabase");
-        FoolibDatabase.open();
-        FoolibDatabase.close();
+        RetCatDatabase.open();
+        RetCatDatabase.close();
     }
 
     @Test
     public void testDatabaseNotNull() throws Exception {
         org.junit.Assume.assumeTrue(TestConfig.LOCALHOST);
         System.out.println("testDatabaseNotNull");
-        JSONObject db = FoolibDatabase.getTestById(Integer.parseInt("1"));
+        JSONObject db = RetCatDatabase.getTestById(Integer.parseInt("1"));
         assertNotNull(db);
     }
 

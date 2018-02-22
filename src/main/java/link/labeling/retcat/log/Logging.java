@@ -1,4 +1,4 @@
-package de.rgzm.foolib.log;
+package link.labeling.retcat.log;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;

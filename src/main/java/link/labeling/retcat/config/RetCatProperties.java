@@ -1,4 +1,4 @@
-package de.rgzm.foolib.config;
+package link.labeling.retcat.config;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -8,7 +8,7 @@ import java.util.Properties;
  * Class for reading the pom.xml file
  * @author thiery
  */
-public class FoolibProperties {
+public class RetCatProperties {
 
 	private static final Properties prop = new Properties();
 	private static final String fileName = "foolib.properties";

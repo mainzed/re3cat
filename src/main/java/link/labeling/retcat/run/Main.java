@@ -1,8 +1,8 @@
-package de.rgzm.foolib.run;
+package link.labeling.retcat.run;
 
-import de.rgzm.foolib.config.POM_foolib;
-import de.rgzm.foolib.log.Logging;
-import de.rgzm.foorlib.database.FoolibDatabase;
+import link.labeling.retcat.config.POM_retcat;
+import link.labeling.retcat.log.Logging;
+import link.labeling.retcat.database.RetCatDatabase;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileOutputStream;
@@ -26,7 +26,7 @@ public class Main {
     public static void main(String[] args) throws IOException, SQLException {
         String libinfo = "";
         try {
-            libinfo = POM_foolib.getInfo().toJSONString();
+            libinfo = POM_retcat.getInfo().toJSONString();
             System.out.println(libinfo);
         } catch (Exception e) {
             libinfo = Logging.getMessageJSON(e, "de.rgzm.foolib.run.Main");
@@ -34,7 +34,7 @@ public class Main {
         }
         String databaseinfo = "";
         try {
-            databaseinfo = FoolibDatabase.getTestById(Integer.parseInt("1")).toJSONString();
+            databaseinfo = RetCatDatabase.getTestById(Integer.parseInt("1")).toJSONString();
             System.out.println(databaseinfo);
         } catch (Exception e) {
             databaseinfo = Logging.getMessageJSON(e, "de.rgzm.foolib.run.Main");
