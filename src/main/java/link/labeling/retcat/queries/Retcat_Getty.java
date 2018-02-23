@@ -1,5 +1,6 @@
-package link.labeling.retcat.utils;
+package link.labeling.retcat.queries;
 
+import link.labeling.retcat.items.RetcatItems;
 import link.labeling.retcat.classes.SuggestionItem;
 import link.labeling.retcat.classes.RetcatItem;
 import link.labeling.retcat.exceptions.ResourceNotAvailableException;
@@ -16,6 +17,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Map;
+import link.labeling.retcat.utils.RetcatUtils;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;

@@ -1,4 +1,4 @@
-package link.labeling.retcat.utils;
+package link.labeling.retcat.items;
 
 import link.labeling.retcat.classes.RetcatItem;
 import link.labeling.retcat.exceptions.ResourceNotAvailableException;

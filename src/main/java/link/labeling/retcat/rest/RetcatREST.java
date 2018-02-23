@@ -1,4 +1,4 @@
-package link.labeling.retcat.utils;
+package link.labeling.retcat.rest;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
@@ -10,6 +10,8 @@ import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import link.labeling.retcat.log.Logging;
+import link.labeling.retcat.queries.Retcat_Getty;
+import link.labeling.retcat.queries.Retcat_HeritageData;
 
 @Path("/rtc")
 public class RetcatREST {
