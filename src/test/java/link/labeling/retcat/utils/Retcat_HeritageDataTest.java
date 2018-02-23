@@ -36,6 +36,7 @@ public class Retcat_HeritageDataTest {
         JSONArray result = Retcat_Getty.queryAAT("gold");
         for (Object item : result) {
             JSONObject tmp = (JSONObject) item;
+            assertEquals(12,tmp.size());
             assertNotSame((String) tmp.get("uri"), "");
             assertNotNull((String) tmp.get("uri"));
             assertNotSame((String) tmp.get("label"), "");
@@ -57,6 +58,7 @@ public class Retcat_HeritageDataTest {
         JSONArray result = Retcat_Getty.queryTGN("Mainz");
         for (Object item : result) {
             JSONObject tmp = (JSONObject) item;
+            assertEquals(12,tmp.size());
             assertNotSame((String) tmp.get("uri"), "");
             assertNotNull((String) tmp.get("uri"));
             assertNotSame((String) tmp.get("label"), "");
@@ -78,6 +80,7 @@ public class Retcat_HeritageDataTest {
         JSONArray result = Retcat_Getty.queryULAN("Dal");
         for (Object item : result) {
             JSONObject tmp = (JSONObject) item;
+            assertEquals(12,tmp.size());
             assertNotSame((String) tmp.get("uri"), "");
             assertNotNull((String) tmp.get("uri"));
             assertNotSame((String) tmp.get("label"), "");
@@ -97,6 +100,7 @@ public class Retcat_HeritageDataTest {
     public void testInfoHE() throws Exception {
         System.out.println("test Retcat_HeritageData.info() for Heritage Englang if required resource is ROMAN");
         JSONObject result = Retcat_HeritageData.info("http://purl.org/heritagedata/schemes/eh_period/concepts/RO");
+        assertEquals(10,result.size());
         assertEquals((String) result.get("uri"), "http://purl.org/heritagedata/schemes/eh_period/concepts/RO");
         assertEquals((String) result.get("label"), "ROMAN");
         assertEquals((String) result.get("scheme"), "Historic England Periods");
@@ -109,6 +113,7 @@ public class Retcat_HeritageDataTest {
     public void testInfoRCAHMS() throws Exception {
         System.out.println("test Retcat_HeritageData.info() for RCAHMS if required resource is BALUSTER");
         JSONObject result = Retcat_HeritageData.info("http://purl.org/heritagedata/schemes/2/concepts/501158");
+        assertEquals(10,result.size());
         assertEquals((String) result.get("uri"), "http://purl.org/heritagedata/schemes/2/concepts/501158");
         assertEquals((String) result.get("label"), "BALUSTER");
         assertEquals((String) result.get("scheme"), "Archaeological Objects Thesaurus (Scotland)");
@@ -121,6 +126,7 @@ public class Retcat_HeritageDataTest {
     public void testInfoRCAHMW() throws Exception {
         System.out.println("test Retcat_HeritageData.info() for RCAHMW if required resource is TOLLBOOTH");
         JSONObject result = Retcat_HeritageData.info("http://purl.org/heritagedata/schemes/10/concepts/71390");
+        assertEquals(10,result.size());
         assertEquals((String) result.get("uri"), "http://purl.org/heritagedata/schemes/10/concepts/71390");
         assertEquals((String) result.get("label"), "TOLLBOOTH");
         assertEquals((String) result.get("scheme"), "MONUMENT TYPE (WALES)");
