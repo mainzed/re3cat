@@ -12,6 +12,7 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import link.labeling.retcat.log.Logging;
 
+@Path("/rtc")
 public class RetcatREST {
 
     @GET
