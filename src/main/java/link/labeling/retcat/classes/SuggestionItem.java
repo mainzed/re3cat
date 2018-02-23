@@ -1,4 +1,4 @@
-package link.labeling.retcat.utils;
+package link.labeling.retcat.classes;
 
 import java.util.HashMap;
 import java.util.HashSet;

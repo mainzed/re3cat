@@ -1,5 +1,6 @@
 package link.labeling.retcat.utils;
 
+import link.labeling.retcat.classes.SuggestionItem;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;

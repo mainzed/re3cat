@@ -1,5 +1,7 @@
 package link.labeling.retcat.utils;
 
+import link.labeling.retcat.classes.SuggestionItem;
+import link.labeling.retcat.classes.RetcatItem;
 import link.labeling.retcat.exceptions.ResourceNotAvailableException;
 import link.labeling.retcat.exceptions.RetcatException;
 import java.io.BufferedReader;

@@ -1,4 +1,4 @@
-package link.labeling.retcat.utils;
+package link.labeling.retcat.classes;
 
 public class RetcatItem {
 	
