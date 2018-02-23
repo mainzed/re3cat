@@ -7,7 +7,7 @@ import java.util.List;
 
 public class RetcatItems {
 
-    public static List<RetcatItem> getAllRetcatItems() throws IOException, ResourceNotAvailableException {
+    public static List<RetcatItem> getReferenceThesaurusCatalogue() throws IOException, ResourceNotAvailableException {
         List<RetcatItem> retcatList = new ArrayList();
         // LOCAL LABELING SYSTEM
         retcatList.add(new RetcatItem("Local Labeling System",

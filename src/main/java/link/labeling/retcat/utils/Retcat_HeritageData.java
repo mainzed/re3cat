@@ -148,7 +148,7 @@ public class Retcat_HeritageData {
             String type = "heritagedata";
             String quality = "";
             String group = "";
-            for (RetcatItem item : RetcatItems.getAllRetcatItems()) {
+            for (RetcatItem item : RetcatItems.getReferenceThesaurusCatalogue()) {
                 if (item.getType().equals(type)) {
                     quality = item.getQuality();
                     group = item.getGroup();
@@ -289,7 +289,7 @@ public class Retcat_HeritageData {
             String type = "heritagedata";
             String quality = "";
             String group = "";
-            for (RetcatItem item : RetcatItems.getAllRetcatItems()) {
+            for (RetcatItem item : RetcatItems.getReferenceThesaurusCatalogue()) {
                 if (item.getType().equals(type)) {
                     quality = item.getQuality();
                     group = item.getGroup();
@@ -430,7 +430,7 @@ public class Retcat_HeritageData {
             String type = "heritagedata";
             String quality = "";
             String group = "";
-            for (RetcatItem item : RetcatItems.getAllRetcatItems()) {
+            for (RetcatItem item : RetcatItems.getReferenceThesaurusCatalogue()) {
                 if (item.getType().equals(type)) {
                     quality = item.getQuality();
                     group = item.getGroup();
@@ -564,7 +564,7 @@ public class Retcat_HeritageData {
             String type = "heritagedata";
             String quality = "";
             String group = "";
-            for (RetcatItem item : RetcatItems.getAllRetcatItems()) {
+            for (RetcatItem item : RetcatItems.getReferenceThesaurusCatalogue()) {
                 if (item.getType().equals(type)) {
                     quality = item.getQuality();
                     group = item.getGroup();
