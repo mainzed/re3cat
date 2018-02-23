@@ -12,7 +12,20 @@ public class RetcatItems {
         // LOCAL LABELING SYSTEM
         retcatList.add(new RetcatItem("Local Labeling System",
                 "The local Labeling System vocabularies.",
-                "/v1/retcat/query/labelingsystem", "/v1/retcat/info/labelingsystem", "//{host}/item", "common reference thesauri (CH)", "ls", "div", "high", true));
+                "/v1/retcat/query/labelingsystem", "/v1/retcat/info/labelingsystem", "//{host}/item", "common reference thesauri (CH)", "ls", "n/a", "high", true));
+        // LABELING SYSTEM INSTANCES
+        // labeling.link
+        retcatList.add(new RetcatItem(
+                "labeling.link", //name
+                "labeling.link vocabularies.", //description
+                "/v1/retcat/query/labelinglink", //queryURL
+                "/v1/retcat/info/labelinglink", //labelURL
+                "//labeling.link/item", //prefix
+                "common reference thesauri (CH)", //group
+                "ls", //type
+                "n/a", //language
+                "high", //quality
+                true)); // is default value?
         // SKOS CONCEPTS
         // GETTY
         retcatList.add(new RetcatItem("Getty AAT",
@@ -52,12 +65,12 @@ public class RetcatItems {
         retcatList.add(new RetcatItem("UNESCO Thesaurus",
                 "The UNESCO Thesaurus is a controlled and structured list of terms used in subject analysis and retrieval of documents and publications in the fields of education, culture, natural sciences, social and human sciences, communication and information. Continuously enriched and updated, its multidisciplinary terminology reflects the evolution of UNESCO's programmes and activities.",
                 "/v1/retcat/query/skosmos/unesco", "/v1/retcat/info/skosmos/unesco", "//vocabularies.unesco.org", "other reference thesauri", "unesco", "en", "high", false));
-		// TEMATRES
-		retcatList.add(new RetcatItem("iDAI.vocab",
+        // TEMATRES
+        retcatList.add(new RetcatItem("iDAI.vocab",
                 "Thesaurus of Deutsches Archäologisches Institut, called archwort. ",
                 "/v1/retcat/query/archwort", "/v1/retcat/info/archwort", "//archwort.dainst.org", "other reference thesauri", "archwort", "de", "low", false));
-		// MORE
-		retcatList.add(new RetcatItem("British Geological Survey",
+        // MORE
+        retcatList.add(new RetcatItem("British Geological Survey",
                 "The British Geological Survey (BGS) is the United Kingdom's premier centre for earth science information and expertise.",
                 "/v1/retcat/query/bgs", "/v1/retcat/info/bgs", "//data.bgs.ac.uk", "other reference thesauri", "bgs", "en", "low", false));
         // INTERPRET AS SKOS CONCEPT
@@ -65,8 +78,8 @@ public class RetcatItems {
         retcatList.add(new RetcatItem("DBpedia",
                 "DBpedia is a project aiming to extract structured content from the information created as part of the Wikipedia project. ",
                 "/v1/retcat/query/dbpedia", "/v1/retcat/info/dbpedia", "//dbpedia.org/resource", "additional information", "dbpedia", "de", "low", true));
-		// WIKIDATA
-		retcatList.add(new RetcatItem("Wikidata",
+        // WIKIDATA
+        retcatList.add(new RetcatItem("Wikidata",
                 "Wikidata is a free and open knowledge base that can be read and edited by both humans and machines.",
                 "/v1/retcat/query/wikidata", "/v1/retcat/info/wikidata", "//www.wikidata.org/entity", "additional information", "wikidata", "en", "low", false));
         // GEONAMES
