@@ -1,4 +1,4 @@
-package link.labeling.retcat.utils;
+package link.labeling.retcat.queries;
 
 import link.labeling.retcat.queries.Retcat_Getty;
 import org.json.simple.JSONArray;
