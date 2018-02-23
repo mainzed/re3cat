@@ -36,18 +36,18 @@ public class Retcat_GettyTest {
         JSONArray result = Retcat_Getty.queryAAT("gold");
         for (Object item : result) {
             JSONObject tmp = (JSONObject) item;
-            assertEquals(12,tmp.size());
-            assertNotSame((String) tmp.get("uri"), "");
+            assertEquals(12, tmp.size());
+            assertNotSame("", (String) tmp.get("uri"));
             assertNotNull((String) tmp.get("uri"));
-            assertNotSame((String) tmp.get("label"), "");
+            assertNotSame("", (String) tmp.get("label"));
             assertNotNull((String) tmp.get("label"));
-            assertNotSame((String) tmp.get("scheme"), "");
+            assertNotSame("", (String) tmp.get("scheme"));
             assertNotNull((String) tmp.get("scheme"));
-            assertNotSame((String) tmp.get("type"), "");
+            assertNotSame("", (String) tmp.get("type"));
             assertNotNull((String) tmp.get("type"));
-            assertNotSame((String) tmp.get("quality"), "");
+            assertNotSame("", (String) tmp.get("quality"));
             assertNotNull((String) tmp.get("quality"));
-            assertNotSame((String) tmp.get("group"), "");
+            assertNotSame("", (String) tmp.get("group"));
             assertNotNull((String) tmp.get("group"));
         }
     }
@@ -58,18 +58,18 @@ public class Retcat_GettyTest {
         JSONArray result = Retcat_Getty.queryTGN("Mainz");
         for (Object item : result) {
             JSONObject tmp = (JSONObject) item;
-            assertEquals(12,tmp.size());
-            assertNotSame((String) tmp.get("uri"), "");
+            assertEquals(12, tmp.size());
+            assertNotSame("", (String) tmp.get("uri"));
             assertNotNull((String) tmp.get("uri"));
-            assertNotSame((String) tmp.get("label"), "");
+            assertNotSame("", (String) tmp.get("label"));
             assertNotNull((String) tmp.get("label"));
-            assertNotSame((String) tmp.get("scheme"), "");
+            assertNotSame("", (String) tmp.get("scheme"));
             assertNotNull((String) tmp.get("scheme"));
-            assertNotSame((String) tmp.get("type"), "");
+            assertNotSame("", (String) tmp.get("type"));
             assertNotNull((String) tmp.get("type"));
-            assertNotSame((String) tmp.get("quality"), "");
+            assertNotSame("", (String) tmp.get("quality"));
             assertNotNull((String) tmp.get("quality"));
-            assertNotSame((String) tmp.get("group"), "");
+            assertNotSame("", (String) tmp.get("group"));
             assertNotNull((String) tmp.get("group"));
         }
     }
@@ -80,18 +80,18 @@ public class Retcat_GettyTest {
         JSONArray result = Retcat_Getty.queryULAN("Dal");
         for (Object item : result) {
             JSONObject tmp = (JSONObject) item;
-            assertEquals(12,tmp.size());
-            assertNotSame((String) tmp.get("uri"), "");
+            assertEquals(12, tmp.size());
+            assertNotSame("", (String) tmp.get("uri"));
             assertNotNull((String) tmp.get("uri"));
-            assertNotSame((String) tmp.get("label"), "");
+            assertNotSame("", (String) tmp.get("label"));
             assertNotNull((String) tmp.get("label"));
-            assertNotSame((String) tmp.get("scheme"), "");
+            assertNotSame("", (String) tmp.get("scheme"));
             assertNotNull((String) tmp.get("scheme"));
-            assertNotSame((String) tmp.get("type"), "");
+            assertNotSame("", (String) tmp.get("type"));
             assertNotNull((String) tmp.get("type"));
-            assertNotSame((String) tmp.get("quality"), "");
+            assertNotSame("", (String) tmp.get("quality"));
             assertNotNull((String) tmp.get("quality"));
-            assertNotSame((String) tmp.get("group"), "");
+            assertNotSame("", (String) tmp.get("group"));
             assertNotNull((String) tmp.get("group"));
         }
     }
@@ -100,39 +100,39 @@ public class Retcat_GettyTest {
     public void testInfoAAT() throws Exception {
         System.out.println("test Retcat_Getty.info() for Getty AAT if required resource is an apple");
         JSONObject result = Retcat_Getty.info("http://vocab.getty.edu/aat/300266417");
-        assertEquals(10,result.size());
-        assertEquals((String) result.get("uri"), "http://vocab.getty.edu/aat/300266417");
-        assertEquals((String) result.get("label"), "apple (fruit)");
-        assertEquals((String) result.get("scheme"), "Art and Architecture Thesaurus");
-        assertEquals((String) result.get("type"), "getty");
-        assertEquals((String) result.get("quality"), "high");
-        assertEquals((String) result.get("group"), "common reference thesauri (CH)");
+        assertEquals(10, result.size());
+        assertEquals("http://vocab.getty.edu/aat/300266417", (String) result.get("uri"));
+        assertEquals("apple (fruit)", (String) result.get("label"));
+        assertEquals("Art and Architecture Thesaurus", (String) result.get("scheme"));
+        assertEquals("getty", (String) result.get("type"));
+        assertEquals("high", (String) result.get("quality"));
+        assertEquals("common reference thesauri (CH)", (String) result.get("group"));
     }
-    
+
     @Test
     public void testInfoTGN() throws Exception {
         System.out.println("test Retcat_Getty.info() for Getty AAT if required resource is Mainz");
         JSONObject result = Retcat_Getty.info("http://vocab.getty.edu/tgn/7004449");
-        assertEquals(10,result.size());
-        assertEquals((String) result.get("uri"), "http://vocab.getty.edu/tgn/7004449");
-        assertEquals((String) result.get("label"), "Mainz");
-        assertEquals((String) result.get("scheme"), "Thesaurus of Geographic Names");
-        assertEquals((String) result.get("type"), "getty");
-        assertEquals((String) result.get("quality"), "high");
-        assertEquals((String) result.get("group"), "common reference thesauri (CH)");
+        assertEquals(10, result.size());
+        assertEquals("http://vocab.getty.edu/tgn/7004449", (String) result.get("uri"));
+        assertEquals("Mainz", (String) result.get("label"));
+        assertEquals("Thesaurus of Geographic Names", (String) result.get("scheme"));
+        assertEquals("getty", (String) result.get("type"));
+        assertEquals("high", (String) result.get("quality"));
+        assertEquals("common reference thesauri (CH)", (String) result.get("group"));
     }
-    
+
     @Test
     public void testInfoULAN() throws Exception {
         System.out.println("test Retcat_Getty.info() for Getty AAT if required resource is Leonardo da Vinci");
         JSONObject result = Retcat_Getty.info("http://vocab.getty.edu/ulan/500010879");
-        assertEquals(10,result.size());
-        assertEquals((String) result.get("uri"), "http://vocab.getty.edu/ulan/500010879");
-        assertEquals((String) result.get("label"), "Leonardo da Vinci");
-        assertEquals((String) result.get("scheme"), "Union List of Artist Names");
-        assertEquals((String) result.get("type"), "getty");
-        assertEquals((String) result.get("quality"), "high");
-        assertEquals((String) result.get("group"), "common reference thesauri (CH)");
+        assertEquals(10, result.size());
+        assertEquals("http://vocab.getty.edu/ulan/500010879", (String) result.get("uri"));
+        assertEquals("Leonardo da Vinci", (String) result.get("label"));
+        assertEquals("Union List of Artist Names", (String) result.get("scheme"));
+        assertEquals("getty", (String) result.get("type"));
+        assertEquals("high", (String) result.get("quality"));
+        assertEquals("common reference thesauri (CH)", (String) result.get("group"));
     }
 
 }

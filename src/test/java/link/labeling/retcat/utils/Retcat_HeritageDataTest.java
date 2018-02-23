@@ -36,18 +36,18 @@ public class Retcat_HeritageDataTest {
         JSONArray result = Retcat_Getty.queryAAT("gold");
         for (Object item : result) {
             JSONObject tmp = (JSONObject) item;
-            assertEquals(12,tmp.size());
-            assertNotSame((String) tmp.get("uri"), "");
+            assertEquals(12, tmp.size());
+            assertNotSame("", (String) tmp.get("uri"));
             assertNotNull((String) tmp.get("uri"));
-            assertNotSame((String) tmp.get("label"), "");
+            assertNotSame("", (String) tmp.get("label"));
             assertNotNull((String) tmp.get("label"));
-            assertNotSame((String) tmp.get("scheme"), "");
+            assertNotSame("", (String) tmp.get("scheme"));
             assertNotNull((String) tmp.get("scheme"));
-            assertNotSame((String) tmp.get("type"), "");
+            assertNotSame("", (String) tmp.get("type"));
             assertNotNull((String) tmp.get("type"));
-            assertNotSame((String) tmp.get("quality"), "");
+            assertNotSame("", (String) tmp.get("quality"));
             assertNotNull((String) tmp.get("quality"));
-            assertNotSame((String) tmp.get("group"), "");
+            assertNotSame("", (String) tmp.get("group"));
             assertNotNull((String) tmp.get("group"));
         }
     }
@@ -58,18 +58,18 @@ public class Retcat_HeritageDataTest {
         JSONArray result = Retcat_Getty.queryTGN("Mainz");
         for (Object item : result) {
             JSONObject tmp = (JSONObject) item;
-            assertEquals(12,tmp.size());
-            assertNotSame((String) tmp.get("uri"), "");
+            assertEquals(12, tmp.size());
+            assertNotSame("", (String) tmp.get("uri"));
             assertNotNull((String) tmp.get("uri"));
-            assertNotSame((String) tmp.get("label"), "");
+            assertNotSame("", (String) tmp.get("label"));
             assertNotNull((String) tmp.get("label"));
-            assertNotSame((String) tmp.get("scheme"), "");
+            assertNotSame("", (String) tmp.get("scheme"));
             assertNotNull((String) tmp.get("scheme"));
-            assertNotSame((String) tmp.get("type"), "");
+            assertNotSame("", (String) tmp.get("type"));
             assertNotNull((String) tmp.get("type"));
-            assertNotSame((String) tmp.get("quality"), "");
+            assertNotSame("", (String) tmp.get("quality"));
             assertNotNull((String) tmp.get("quality"));
-            assertNotSame((String) tmp.get("group"), "");
+            assertNotSame("", (String) tmp.get("group"));
             assertNotNull((String) tmp.get("group"));
         }
     }
@@ -80,18 +80,18 @@ public class Retcat_HeritageDataTest {
         JSONArray result = Retcat_Getty.queryULAN("Dal");
         for (Object item : result) {
             JSONObject tmp = (JSONObject) item;
-            assertEquals(12,tmp.size());
-            assertNotSame((String) tmp.get("uri"), "");
+            assertEquals(12, tmp.size());
+            assertNotSame("", (String) tmp.get("uri"));
             assertNotNull((String) tmp.get("uri"));
-            assertNotSame((String) tmp.get("label"), "");
+            assertNotSame("", (String) tmp.get("label"));
             assertNotNull((String) tmp.get("label"));
-            assertNotSame((String) tmp.get("scheme"), "");
+            assertNotSame("", (String) tmp.get("scheme"));
             assertNotNull((String) tmp.get("scheme"));
-            assertNotSame((String) tmp.get("type"), "");
+            assertNotSame("", (String) tmp.get("type"));
             assertNotNull((String) tmp.get("type"));
-            assertNotSame((String) tmp.get("quality"), "");
+            assertNotSame("", (String) tmp.get("quality"));
             assertNotNull((String) tmp.get("quality"));
-            assertNotSame((String) tmp.get("group"), "");
+            assertNotSame("", (String) tmp.get("group"));
             assertNotNull((String) tmp.get("group"));
         }
     }
@@ -100,39 +100,39 @@ public class Retcat_HeritageDataTest {
     public void testInfoHE() throws Exception {
         System.out.println("test Retcat_HeritageData.info() for Heritage Englang if required resource is ROMAN");
         JSONObject result = Retcat_HeritageData.info("http://purl.org/heritagedata/schemes/eh_period/concepts/RO");
-        assertEquals(10,result.size());
-        assertEquals((String) result.get("uri"), "http://purl.org/heritagedata/schemes/eh_period/concepts/RO");
-        assertEquals((String) result.get("label"), "ROMAN");
-        assertEquals((String) result.get("scheme"), "Historic England Periods");
-        assertEquals((String) result.get("type"), "heritagedata");
-        assertEquals((String) result.get("quality"), "high");
-        assertEquals((String) result.get("group"), "common reference thesauri (CH)");
+        assertEquals(10, result.size());
+        assertEquals("http://purl.org/heritagedata/schemes/eh_period/concepts/RO", (String) result.get("uri"));
+        assertEquals("ROMAN", (String) result.get("label"));
+        assertEquals("Historic England Periods", (String) result.get("scheme"));
+        assertEquals("heritagedata", (String) result.get("type"));
+        assertEquals("high", (String) result.get("quality"));
+        assertEquals("common reference thesauri (CH)", (String) result.get("group"));
     }
-    
+
     @Test
     public void testInfoRCAHMS() throws Exception {
         System.out.println("test Retcat_HeritageData.info() for RCAHMS if required resource is BALUSTER");
         JSONObject result = Retcat_HeritageData.info("http://purl.org/heritagedata/schemes/2/concepts/501158");
-        assertEquals(10,result.size());
-        assertEquals((String) result.get("uri"), "http://purl.org/heritagedata/schemes/2/concepts/501158");
-        assertEquals((String) result.get("label"), "BALUSTER");
-        assertEquals((String) result.get("scheme"), "Archaeological Objects Thesaurus (Scotland)");
-        assertEquals((String) result.get("type"), "heritagedata");
-        assertEquals((String) result.get("quality"), "high");
-        assertEquals((String) result.get("group"), "common reference thesauri (CH)");
+        assertEquals(10, result.size());
+        assertEquals("http://purl.org/heritagedata/schemes/2/concepts/501158", (String) result.get("uri"));
+        assertEquals("BALUSTER", (String) result.get("label"));
+        assertEquals("Archaeological Objects Thesaurus (Scotland)", (String) result.get("scheme"));
+        assertEquals("heritagedata", (String) result.get("type"));
+        assertEquals("high", (String) result.get("quality"));
+        assertEquals("common reference thesauri (CH)", (String) result.get("group"));
     }
-    
+
     @Test
     public void testInfoRCAHMW() throws Exception {
         System.out.println("test Retcat_HeritageData.info() for RCAHMW if required resource is TOLLBOOTH");
         JSONObject result = Retcat_HeritageData.info("http://purl.org/heritagedata/schemes/10/concepts/71390");
-        assertEquals(10,result.size());
-        assertEquals((String) result.get("uri"), "http://purl.org/heritagedata/schemes/10/concepts/71390");
-        assertEquals((String) result.get("label"), "TOLLBOOTH");
-        assertEquals((String) result.get("scheme"), "MONUMENT TYPE (WALES)");
-        assertEquals((String) result.get("type"), "heritagedata");
-        assertEquals((String) result.get("quality"), "high");
-        assertEquals((String) result.get("group"), "common reference thesauri (CH)");
+        assertEquals(10, result.size());
+        assertEquals("http://purl.org/heritagedata/schemes/10/concepts/71390", (String) result.get("uri"));
+        assertEquals("TOLLBOOTH", (String) result.get("label"));
+        assertEquals("MONUMENT TYPE (WALES)", (String) result.get("scheme"));
+        assertEquals("heritagedata", (String) result.get("type"));
+        assertEquals("high", (String) result.get("quality"));
+        assertEquals("common reference thesauri (CH)", (String) result.get("group"));
     }
 
 }
