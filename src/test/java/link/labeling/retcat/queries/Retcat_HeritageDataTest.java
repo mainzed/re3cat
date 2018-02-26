@@ -98,7 +98,7 @@ public class Retcat_HeritageDataTest {
 
     @Test
     public void testInfoHE() throws Exception {
-        System.out.println("test Retcat_HeritageData.info() for Heritage Englang if required resource is ROMAN");
+        System.out.println("test Retcat_HeritageData.info() for Heritage England if required resource is ROMAN");
         JSONObject result = Retcat_HeritageData.info("http://purl.org/heritagedata/schemes/eh_period/concepts/RO");
         assertEquals(10, result.size());
         assertEquals("http://purl.org/heritagedata/schemes/eh_period/concepts/RO", (String) result.get("uri"));
