@@ -11,43 +11,99 @@ public class RetcatItems {
     public static List<RetcatItem> getReferenceThesaurusCatalogue() throws IOException, ResourceNotAvailableException {
         List<RetcatItem> retcatList = new ArrayList();
         // LOCAL LABELING SYSTEM
-        retcatList.add(new RetcatItem("Local Labeling System",
-                "The local Labeling System vocabularies.",
-                "/v1/rtc/query/labelingsystem", "/v1/rtc/info/labelingsystem", "//{host}/item", "common reference thesauri (CH)", "ls", "n/a", "high", true));
-        // LABELING SYSTEM INSTANCES
-        // labeling.link
         retcatList.add(new RetcatItem(
-                "labeling.link", //name
-                "labeling.link vocabularies.", //description
-                "/v1/rtc/query/labelinglink", //queryURL
-                "/v1/rtc/info/labelinglink", //labelURL
-                "//labeling.link/item", //prefix
+                "This Labeling System", //name
+                "This Labeling System vocabularies.", //description
+                "/v1/rtc/query/labelingsystem", //queryURL
+                "/v1/rtc/info/labelingsystem", //labelURL
+                "//{host}/item", //prefix
                 "common reference thesauri (CH)", //group
                 "ls", //type
                 "n/a", //language
                 "high", //quality
                 true)); // is default value?
+        // LABELING SYSTEM INSTANCES
+        // labeling.link
+        retcatList.add(new RetcatItem(
+                "labeling.link", //name
+                "The labeling.link vocabularies.", //description
+                "/v1/rtc/query/labelinglink", //queryURL
+                "/v1/rtc/info/labelinglink", //labelURL
+                "//labeling.link/item", //prefix
+                "common reference thesauri (CH)", //group
+                "labelinglink", //type
+                "n/a", //language
+                "high", //quality
+                true)); // is default value?
         // SKOS CONCEPTS
         // GETTY
-        retcatList.add(new RetcatItem("Getty AAT",
+        retcatList.add(new RetcatItem(
+                "Getty AAT",
                 "AAT is a structured vocabulary, including terms, descriptions, and other metadata for generic concepts related to art, architecture, conservation, archaeology, and other cultural heritage. Included are work types, styles, materials, techniques, and others.",
-                "/v1/rtc/query/getty/aat", "/v1/rtc/info/getty", "//vocab.getty.edu", "common reference thesauri (CH)", "getty", "en", "high", true));
-        retcatList.add(new RetcatItem("Getty TGN",
+                "/v1/rtc/query/getty/aat",
+                "/v1/rtc/info/getty",
+                "//vocab.getty.edu",
+                "common reference thesauri (CH)",
+                "getty",
+                "en",
+                "high",
+                true));
+        retcatList.add(new RetcatItem(
+                "Getty TGN",
                 "TGN is a structured vocabulary, including names, descriptions, and other metadata for extant and historical cities, empires, archaeological sites, and physical features important to research of art and architecture. TGN may be linked to GIS, maps, and other geographic resources.",
-                "/v1/rtc/query/getty/tgn", "/v1/rtc/info/getty", "//vocab.getty.edu", "common reference thesauri (CH)", "getty", "en", "high", false));
-        retcatList.add(new RetcatItem("Getty ULAN",
+                "/v1/rtc/query/getty/tgn",
+                "/v1/rtc/info/getty",
+                "//vocab.getty.edu",
+                "common reference thesauri (CH)",
+                "getty",
+                "en",
+                "high",
+                false));
+        retcatList.add(new RetcatItem(
+                "Getty ULAN",
                 "ULAN is a structured vocabulary, including names, biographies, related people, and other metadata about artists, architects, firms, studios, museums, patrons, sitters, and other people and groups involved in the creation and study of art and architecture.",
-                "/v1/rtc/query/getty/ulan", "/v1/rtc/info/getty", "//vocab.getty.edu", "common reference thesauri (CH)", "getty", "en", "high", false));
+                "/v1/rtc/query/getty/ulan",
+                "/v1/rtc/info/getty",
+                "//vocab.getty.edu",
+                "common reference thesauri (CH)",
+                "getty",
+                "en",
+                "high",
+                false));
         // HERITAGE DATA
-        retcatList.add(new RetcatItem("Heritage Data Historic England",
+        retcatList.add(new RetcatItem(
+                "Heritage Data Historic England",
                 "FISH Archaeological Sciences Thesaurus + FISH Building Materials Thesaurus + FISH Event Types Thesaurus + FISH Archaeological Objects Thesaurus + FISH Maritime Craft Types Thesaurus FISH Thesaurus of Monument Types + Historic England Periods Authority File + Components + Evidence.",
-                "/v1/rtc/query/heritagedata/historicengland", "/v1/rtc/info/heritagedata", "//purl.org/heritagedata/schemes", "common reference thesauri (CH)", "heritagedata", "en", "high", true));
-        retcatList.add(new RetcatItem("Heritage Data RCAHMS",
+                "/v1/rtc/query/heritagedata/historicengland",
+                "/v1/rtc/info/heritagedata",
+                "//purl.org/heritagedata/schemes",
+                "common reference thesauri (CH)",
+                "heritagedata",
+                "en",
+                "high",
+                true));
+        retcatList.add(new RetcatItem(
+                "Heritage Data RCAHMS",
                 "Objects made by human activity + types of craft that survive as wrecks, or are documented as losses, in Scottish maritime waters + monument types relating to the archaeological and built heritage of Scotland. The terminology also includes Scottish Gaelic translations for some terms.",
-                "/v1/rtc/query/heritagedata/rcahms", "/v1/rtc/info/heritagedata", "//purl.org/heritagedata/schemes", "common reference thesauri (CH)", "heritagedata", "en", "high", false));
-        retcatList.add(new RetcatItem("Heritage Data RCAHMW",
+                "/v1/rtc/query/heritagedata/rcahms",
+                "/v1/rtc/info/heritagedata",
+                "//purl.org/heritagedata/schemes",
+                "common reference thesauri (CH)",
+                "heritagedata",
+                "en",
+                "high",
+                false));
+        retcatList.add(new RetcatItem(
+                "Heritage Data RCAHMW",
                 "A list of periods for use in Wales + classification of monument types in Wales by function.",
-                "/v1/rtc/query/heritagedata/rcahmw", "/v1/rtc/info/heritagedata", "//purl.org/heritagedata/schemes", "common reference thesauri (CH)", "heritagedata", "en", "high", false));
+                "/v1/rtc/query/heritagedata/rcahmw",
+                "/v1/rtc/info/heritagedata",
+                "//purl.org/heritagedata/schemes",
+                "common reference thesauri (CH)",
+                "heritagedata",
+                "en",
+                "high",
+                false));
         // CHRONONTOLOGY
         retcatList.add(new RetcatItem("ChronOntology",
                 "ChronOntology is a time gazetteer web service that assumes a role similar to that of place gazetteers but for temporal concepts and cultural periods as well a system for storing, managing, mapping and making accessible descriptions of temporal concepts.",
