@@ -1,7 +1,5 @@
 package link.labeling.retcat.queries;
 
-import link.labeling.retcat.queries.Retcat_HeritageData;
-import link.labeling.retcat.queries.Retcat_Getty;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.junit.After;
