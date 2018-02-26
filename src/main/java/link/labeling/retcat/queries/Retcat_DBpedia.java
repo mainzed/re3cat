@@ -23,7 +23,7 @@ public class Retcat_DBpedia {
     public static JSONArray query(String searchword) throws IOException, ResourceNotAvailableException, ParseException {
         JSONArray out = new JSONArray();
         searchword = RetcatUtils.encodeURIComponent(searchword);
-		String url_string = "http://lookup.dbpedia.org/api/search.asmx/KeywordSearch?QueryString=" + searchword + "&MaxHits=" + RetcatUtils.getLimit();
+		String url_string = "http://lookup.dbpedia.org/api/search.asmx/KeywordSearch?QueryString=" + searchword + "&MaxHits=" + RetcatUtils.resultQueryLimit();
 		URL url = new URL(url_string);
 		HttpURLConnection conn = (HttpURLConnection) url.openConnection();
 		conn.setRequestProperty("Accept", "application/json");
