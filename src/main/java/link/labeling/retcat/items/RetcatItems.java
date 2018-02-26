@@ -105,9 +105,17 @@ public class RetcatItems {
                 "high",
                 false));
         // CHRONONTOLOGY
-        retcatList.add(new RetcatItem("ChronOntology",
+        retcatList.add(new RetcatItem(
+                "ChronOntology",
                 "ChronOntology is a time gazetteer web service that assumes a role similar to that of place gazetteers but for temporal concepts and cultural periods as well a system for storing, managing, mapping and making accessible descriptions of temporal concepts.",
-                "/v1/rtc/query/chronontology", "/v1/rtc/info/chronontology", "//chronontology.dainst.org/period", "common reference thesauri (CH)", "chronontology", "en", "high", false));
+                "/v1/rtc/query/chronontology",
+                "/v1/rtc/info/chronontology",
+                "//chronontology.dainst.org/period",
+                "common reference thesauri (CH)",
+                "chronontology",
+                "en",
+                "high",
+                false));
         // PLEIADES (from Pelagios Periopleo API)
         retcatList.add(new RetcatItem("Pleiades",
                 "Pleiades is a community-built gazetteer and graph of ancient places. It publishes authoritative information about ancient places and spaces, providing unique services for finding, displaying, and reusing that information under open license.",
