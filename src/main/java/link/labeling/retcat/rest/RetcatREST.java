@@ -15,6 +15,7 @@ import javax.ws.rs.core.Response;
 import javax.ws.rs.core.UriInfo;
 import link.labeling.retcat.log.Logging;
 import link.labeling.retcat.queries.Retcat_ChronOntology;
+import link.labeling.retcat.queries.Retcat_DBpedia;
 import link.labeling.retcat.queries.Retcat_Getty;
 import link.labeling.retcat.queries.Retcat_HeritageData;
 import link.labeling.retcat.queries.Retcat_LabelingLink;
@@ -271,6 +272,38 @@ public class RetcatREST {
     public Response getInfoLabelingLink(@QueryParam("uri") String uri) {
         try {
             JSONObject jsonOut = Retcat_LabelingLink.info(uri);
+            return Response.ok(jsonOut).header("Content-Type", "application/json;charset=UTF-8").build();
+        } catch (Exception e) {
+            return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity(Logging.getMessageJSON(e, "link.labeling.retcat.utils.RetcatREST"))
+                    .header("Content-Type", "application/json;charset=UTF-8").build();
+        }
+    }
+    
+    @GET
+    @Path("/query/dbpedia")
+    @Produces(MediaType.APPLICATION_JSON + ";charset=UTF-8")
+    public Response getQueryResultsDBpedia(@QueryParam("query") String searchword) {
+        try {
+            JSONArray outArray = new JSONArray();
+            if (searchword.startsWith("uri:")) {
+                outArray.add(Retcat_DBpedia.info(searchword.replace("uri:", "")));
+                outArray.remove(new JSONObject());
+            } else {
+                outArray = Retcat_DBpedia.query(searchword);
+            }
+            return Response.ok(outArray).header("Content-Type", "application/json;charset=UTF-8").build();
+        } catch (Exception e) {
+            return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity(Logging.getMessageJSON(e, "link.labeling.retcat.utils.RetcatREST"))
+                    .header("Content-Type", "application/json;charset=UTF-8").build();
+        }
+    }
+
+    @GET
+    @Path("/info/dbpedia")
+    @Produces(MediaType.APPLICATION_JSON + ";charset=UTF-8")
+    public Response getInfoDBpedia(@QueryParam("uri") String uri) {
+        try {
+            JSONObject jsonOut = Retcat_DBpedia.info(uri);
             return Response.ok(jsonOut).header("Content-Type", "application/json;charset=UTF-8").build();
         } catch (Exception e) {
             return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity(Logging.getMessageJSON(e, "link.labeling.retcat.utils.RetcatREST"))
