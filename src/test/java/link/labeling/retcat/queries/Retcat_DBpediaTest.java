@@ -36,7 +36,7 @@ public class Retcat_DBpediaTest {
         JSONArray result = Retcat_DBpedia.query("Apple");
         for (Object item : result) {
             JSONObject tmp = (JSONObject) item;
-            assertEquals(12, tmp.size());
+            assertEquals(13, tmp.size());
             assertNotSame("", (String) tmp.get("uri"));
             assertNotNull((String) tmp.get("uri"));
             assertNotSame("", (String) tmp.get("label"));

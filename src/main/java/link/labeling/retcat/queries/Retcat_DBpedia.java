@@ -65,7 +65,7 @@ public class Retcat_DBpedia {
 			tmpAutosuggest.setGroup(group);
 		}
         // fillOutputJSONforQuery
-        out = RetcatUtils.fillOutputJSONforQuery(autosuggests);
+        out = RetcatUtils.fillOutputJSONforQuery(autosuggests, searchword);
         return out;
     }
 

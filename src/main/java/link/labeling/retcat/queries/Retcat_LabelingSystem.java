@@ -172,7 +172,7 @@ public class Retcat_LabelingSystem {
             tmpAutosuggest.setGroup(group);
         }
         // fillOutputJSONforQuery
-        out = RetcatUtils.fillOutputJSONforQuery(autosuggests);
+        out = RetcatUtils.fillOutputJSONforQuery(autosuggests, searchword);
         return out;
     }
 
@@ -322,7 +322,7 @@ public class Retcat_LabelingSystem {
             tmpAutosuggest.setGroup(group);
         }
         // fillOutputJSONforQuery
-        out = RetcatUtils.fillOutputJSONforQuery(autosuggests);
+        out = RetcatUtils.fillOutputJSONforQuery(autosuggests, searchword);
         return out;
     }
 

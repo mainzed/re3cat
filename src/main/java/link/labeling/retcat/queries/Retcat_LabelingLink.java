@@ -172,7 +172,7 @@ public class Retcat_LabelingLink {
             tmpAutosuggest.setGroup(group);
         }
         // fillOutputJSONforQuery
-        out = RetcatUtils.fillOutputJSONforQuery(autosuggests);
+        out = RetcatUtils.fillOutputJSONforQuery(autosuggests, searchword);
         return out;
     }
 

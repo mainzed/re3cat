@@ -2,10 +2,12 @@ package link.labeling.retcat.utils;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
+import java.util.HashMap;
 import link.labeling.retcat.classes.SuggestionItem;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
+import java.util.TreeMap;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
@@ -13,7 +15,7 @@ public class RetcatUtils {
 
     private static final int LIMIT = 20;
 
-    public static JSONArray fillOutputJSONforQuery(Map<String, SuggestionItem> autosuggests) {
+    public static JSONArray fillOutputJSONforQuery(Map<String, SuggestionItem> autosuggests, String q) {
         JSONArray outArray = new JSONArray();
         int i = 0;
         for (Map.Entry<String, SuggestionItem> entry : autosuggests.entrySet()) {
@@ -86,6 +88,7 @@ public class RetcatUtils {
                 i++;
             }
         }
+        outArray = sortSuggestionsByLevenshtein(outArray, q);
         return outArray;
     }
 
@@ -103,6 +106,21 @@ public class RetcatUtils {
             result = s;
         }
         return result;
+    }
+
+    private static JSONArray sortSuggestionsByLevenshtein(JSONArray in, String q) {
+        JSONArray out = new JSONArray();
+        Map<Double, JSONObject> unsortMap = new HashMap<>();
+        for (Object item : in) {
+            JSONObject tmp = (JSONObject) item;
+            tmp.put("similarity", StringSimilarity.Levenshtein(q, (String) tmp.get("label")));
+            unsortMap.put(StringSimilarity.Levenshtein(q, (String) tmp.get("label")), tmp);
+        }
+        Map<Double, JSONObject> sortedMap = new TreeMap<>(unsortMap);
+        for (Map.Entry<Double, JSONObject> entry : sortedMap.entrySet()) {
+            out.add(entry.getValue());
+        }
+        return out;
     }
 
 }

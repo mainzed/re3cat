@@ -36,7 +36,7 @@ public class Retcat_LabelingSystemTest {
         JSONArray result = Retcat_LabelingSystem.query("Spat", "143.93.114.135");
         for (Object item : result) {
             JSONObject tmp = (JSONObject) item;
-            assertEquals(12, tmp.size());
+            assertEquals(13, tmp.size());
             assertNotSame("", (String) tmp.get("uri"));
             assertNotNull((String) tmp.get("uri"));
             assertNotSame("", (String) tmp.get("label"));
@@ -58,7 +58,7 @@ public class Retcat_LabelingSystemTest {
         JSONArray result = Retcat_LabelingSystem.queryVocabulary("Spat", "143.93.114.135", "aQVlEoPZmj4b");
         for (Object item : result) {
             JSONObject tmp = (JSONObject) item;
-            assertEquals(12, tmp.size());
+            assertEquals(13, tmp.size());
             assertNotSame("", (String) tmp.get("uri"));
             assertNotNull((String) tmp.get("uri"));
             assertNotSame("", (String) tmp.get("label"));

@@ -68,7 +68,7 @@ public class Retcat_ChronOntology {
             tmpAutosuggest.setGroup(group);
         }
         // fillOutputJSONforQuery
-        out = RetcatUtils.fillOutputJSONforQuery(autosuggests);
+        out = RetcatUtils.fillOutputJSONforQuery(autosuggests, searchword);
         return out;
     }
 
