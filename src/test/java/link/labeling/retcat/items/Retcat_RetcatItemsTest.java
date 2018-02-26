@@ -30,10 +30,24 @@ public class Retcat_RetcatItemsTest {
     }
 
     @Test
-    public void testGetItemByName() throws Exception {
-        System.out.println("test RetcatItems.getRetcatItemByName()");
+    public void testGetLabelingSystemItemByName() throws Exception {
+        System.out.println("test RetcatItems.getRetcatItemByName() - This Labeling System");
+        RetcatItem item = RetcatItems.getRetcatItemByName("This Labeling System");
+        assertEquals("This Labeling System", item.getName());
+    }
+    
+    @Test
+    public void testGetGettyAATItemByName() throws Exception {
+        System.out.println("test RetcatItems.getRetcatItemByName() - Getty AAT");
         RetcatItem item = RetcatItems.getRetcatItemByName("Getty AAT");
         assertEquals("Getty AAT", item.getName());
+    }
+    
+    @Test
+    public void testGetHistoricEnglandItemByName() throws Exception {
+        System.out.println("test RetcatItems.getRetcatItemByName() - Heritage Data Historic England");
+        RetcatItem item = RetcatItems.getRetcatItemByName("Heritage Data Historic England");
+        assertEquals("Heritage Data Historic England", item.getName());
     }
 
 }
