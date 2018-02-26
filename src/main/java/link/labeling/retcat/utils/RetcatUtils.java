@@ -123,4 +123,8 @@ public class RetcatUtils {
         return out;
     }
 
+    public static int getLimit() {
+        return LIMIT * 3;
+    }
+
 }

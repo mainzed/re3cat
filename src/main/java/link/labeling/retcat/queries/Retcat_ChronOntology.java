@@ -23,7 +23,7 @@ public class Retcat_ChronOntology {
     public static JSONArray query(String searchword) throws IOException, ResourceNotAvailableException, ParseException {
         JSONArray out = new JSONArray();
         searchword = RetcatUtils.encodeURIComponent(searchword);
-        String url_string = "http://chronontology.dainst.org/data/period?q=" + searchword + "&limit=" + 20;
+        String url_string = "http://chronontology.dainst.org/data/period?q=" + searchword + "&limit=" + RetcatUtils.getLimit();
         URL url = new URL(url_string);
         HttpURLConnection conn = (HttpURLConnection) url.openConnection();
         BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream(), "UTF-8"));
