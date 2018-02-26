@@ -54,7 +54,7 @@ public class Retcat_ChronOntologyTest {
 
     @Test
     public void testInfoChronOntology() throws Exception {
-        System.out.println("test Retcat_ChronOntology.info() for Labeling System if required resource is ?TBD?");
+        System.out.println("test Retcat_ChronOntology.info() for ChronOntology if required resource is Roman");
         JSONObject result = Retcat_ChronOntology.info("http://chronontology.dainst.org/period/KTwRym1w8abB");
         assertEquals(10, result.size());
         assertEquals("http://chronontology.dainst.org/period/KTwRym1w8abB", (String) result.get("uri"));
