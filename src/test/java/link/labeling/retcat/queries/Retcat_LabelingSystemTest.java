@@ -33,7 +33,7 @@ public class Retcat_LabelingSystemTest {
     @Test
     public void testQueryLabelingSystem() throws Exception {
         System.out.println("test Retcat_LabelingSystem.queryLabelingSystem() if required elements are not empty and not null");
-        JSONArray result = Retcat_LabelingSystem.queryLabelingSystem("Spat", "143.93.114.135");
+        JSONArray result = Retcat_LabelingSystem.query("Spat", "143.93.114.135");
         for (Object item : result) {
             JSONObject tmp = (JSONObject) item;
             assertEquals(12, tmp.size());
@@ -55,7 +55,7 @@ public class Retcat_LabelingSystemTest {
     @Test
     public void testQueryLabelingSystemVocabulary() throws Exception {
         System.out.println("test Retcat_LabelingSystem.queryLabelingSystemVocabulary() if required elements are not empty and not null");
-        JSONArray result = Retcat_LabelingSystem.queryLabelingSystemVocabulary("Spat", "143.93.114.135", "aQVlEoPZmj4b");
+        JSONArray result = Retcat_LabelingSystem.queryVocabulary("Spat", "143.93.114.135", "aQVlEoPZmj4b");
         for (Object item : result) {
             JSONObject tmp = (JSONObject) item;
             assertEquals(12, tmp.size());

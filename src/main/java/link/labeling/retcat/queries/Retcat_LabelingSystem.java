@@ -26,7 +26,7 @@ import org.json.simple.parser.ParseException;
 
 public class Retcat_LabelingSystem {
 
-    public static JSONArray queryLabelingSystem(String searchword, String host) throws IOException, ResourceNotAvailableException, ParseException {
+    public static JSONArray query(String searchword, String host) throws IOException, ResourceNotAvailableException, ParseException {
         JSONArray out = new JSONArray();
         String url = "http://" + host + "/api/v1/sparql";
         String sparql = "PREFIX skos: <http://www.w3.org/2004/02/skos/core#> PREFIX ls: <http://labeling.link/docs/ls/core#> PREFIX dc: <http://purl.org/dc/elements/1.1/> PREFIX dct: <http://purl.org/dc/terms/> PREFIX foaf: <http://xmlns.com/foaf/0.1/> "
@@ -176,7 +176,7 @@ public class Retcat_LabelingSystem {
         return out;
     }
 
-    public static JSONArray queryLabelingSystemVocabulary(String searchword, String host, String vocabulary) throws IOException, ResourceNotAvailableException, ParseException {
+    public static JSONArray queryVocabulary(String searchword, String host, String vocabulary) throws IOException, ResourceNotAvailableException, ParseException {
         JSONArray out = new JSONArray();
         String url = "http://" + host + "/api/v1/sparql";
         String sparql = "PREFIX skos: <http://www.w3.org/2004/02/skos/core#> PREFIX ls: <http://labeling.link/docs/ls/core#> PREFIX dc: <http://purl.org/dc/elements/1.1/> PREFIX dct: <http://purl.org/dc/terms/> PREFIX foaf: <http://xmlns.com/foaf/0.1/> "
