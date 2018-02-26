@@ -54,7 +54,7 @@ public class Retcat_LabelingLinkTest {
 
     @Test
     public void testQueryLabelingSystemVocabulary() throws Exception {
-        System.out.println("test Retcat_LabelingLink.queryLabelingSystemVocabulary() if required elements are not empty and not null");
+        System.out.println("TBD - test Retcat_LabelingLink.queryLabelingSystemVocabulary() if required elements are not empty and not null");
         /*JSONArray result = Retcat_LabelingLink.queryLabelingSystemVocabulary("?TBD?", "?TBD?");
         for (Object item : result) {
             JSONObject tmp = (JSONObject) item;
@@ -76,7 +76,7 @@ public class Retcat_LabelingLinkTest {
 
     @Test
     public void testInfoLabelingSystem() throws Exception {
-        System.out.println("test Retcat_LabelingLink.info() for Labeling System if required resource is ?TBD?");
+        System.out.println("TBD - test Retcat_LabelingLink.info() for Labeling System if required resource is ?TBD?");
         /*JSONObject result = Retcat_LabelingLink.info("http://labeling.link/item/label/?TBD?");
         assertEquals(13, result.size());
         assertEquals("http://labeling.link/item/label/?TBD?", (String) result.get("uri"));
