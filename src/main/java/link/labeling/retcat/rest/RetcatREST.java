@@ -4,15 +4,21 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
 import javax.ws.rs.GET;
+import javax.ws.rs.HeaderParam;
 import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
+import javax.ws.rs.core.HttpHeaders;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import javax.ws.rs.core.UriInfo;
 import link.labeling.retcat.log.Logging;
 import link.labeling.retcat.queries.Retcat_ChronOntology;
 import link.labeling.retcat.queries.Retcat_Getty;
 import link.labeling.retcat.queries.Retcat_HeritageData;
+import link.labeling.retcat.queries.Retcat_LabelingLink;
+import link.labeling.retcat.queries.Retcat_LabelingSystem;
 
 @Path("/rtc")
 public class RetcatREST {
@@ -86,107 +92,190 @@ public class RetcatREST {
                     .header("Content-Type", "application/json;charset=UTF-8").build();
         }
     }
+
+    @GET
+    @Path("/query/heritagedata/historicengland")
+    @Produces(MediaType.APPLICATION_JSON + ";charset=UTF-8")
+    public Response getQueryResultsHeritagedataHE(@QueryParam("query") String searchword) {
+        try {
+            JSONArray outArray = new JSONArray();
+            if (searchword.startsWith("uri:")) {
+                outArray.add(Retcat_HeritageData.info(searchword.replace("uri:", "")));
+                outArray.remove(new JSONObject());
+            } else {
+                outArray = Retcat_HeritageData.queryHE(searchword);
+            }
+            return Response.ok(outArray).header("Content-Type", "application/json;charset=UTF-8").build();
+        } catch (Exception e) {
+            return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity(Logging.getMessageJSON(e, "link.labeling.retcat.utils.RetcatREST"))
+                    .header("Content-Type", "application/json;charset=UTF-8").build();
+        }
+    }
+
+    @GET
+    @Path("/query/heritagedata/rcahms")
+    @Produces(MediaType.APPLICATION_JSON + ";charset=UTF-8")
+    public Response getQueryResultsHeritagedataRCAHMS(@QueryParam("query") String searchword) {
+        try {
+            JSONArray outArray = new JSONArray();
+            if (searchword.startsWith("uri:")) {
+                outArray.add(Retcat_HeritageData.info(searchword.replace("uri:", "")));
+                outArray.remove(new JSONObject());
+            } else {
+                outArray = Retcat_HeritageData.queryRCAHMS(searchword);
+            }
+            return Response.ok(outArray).header("Content-Type", "application/json;charset=UTF-8").build();
+        } catch (Exception e) {
+            return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity(Logging.getMessageJSON(e, "link.labeling.retcat.utils.RetcatREST"))
+                    .header("Content-Type", "application/json;charset=UTF-8").build();
+        }
+    }
+
+    @GET
+    @Path("/query/heritagedata/rcahmw")
+    @Produces(MediaType.APPLICATION_JSON + ";charset=UTF-8")
+    public Response getQueryResultsHeritagedataRCAHMW(@QueryParam("query") String searchword) {
+        try {
+            JSONArray outArray = new JSONArray();
+            if (searchword.startsWith("uri:")) {
+                outArray.add(Retcat_HeritageData.info(searchword.replace("uri:", "")));
+                outArray.remove(new JSONObject());
+            } else {
+                outArray = Retcat_HeritageData.queryRCAHMW(searchword);
+            }
+            return Response.ok(outArray).header("Content-Type", "application/json;charset=UTF-8").build();
+        } catch (Exception e) {
+            return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity(Logging.getMessageJSON(e, "link.labeling.retcat.utils.RetcatREST"))
+                    .header("Content-Type", "application/json;charset=UTF-8").build();
+        }
+    }
+
+    @GET
+    @Path("/info/heritagedata")
+    @Produces(MediaType.APPLICATION_JSON + ";charset=UTF-8")
+    public Response getInfoHeritageData(@QueryParam("uri") String uri) {
+        try {
+            JSONObject jsonOut = Retcat_HeritageData.info(uri);
+            return Response.ok(jsonOut).header("Content-Type", "application/json;charset=UTF-8").build();
+        } catch (Exception e) {
+            return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity(Logging.getMessageJSON(e, "link.labeling.retcat.utils.RetcatREST"))
+                    .header("Content-Type", "application/json;charset=UTF-8").build();
+        }
+    }
+
+    @GET
+    @Path("/query/chronontology")
+    @Produces(MediaType.APPLICATION_JSON + ";charset=UTF-8")
+    public Response getQueryResultsChronOntology(@QueryParam("query") String searchword) {
+        try {
+            JSONArray outArray = new JSONArray();
+            if (searchword.startsWith("uri:")) {
+                outArray.add(Retcat_ChronOntology.info(searchword.replace("uri:", "")));
+                outArray.remove(new JSONObject());
+            } else {
+                outArray = Retcat_ChronOntology.query(searchword);
+            }
+            return Response.ok(outArray).header("Content-Type", "application/json;charset=UTF-8").build();
+        } catch (Exception e) {
+            return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity(Logging.getMessageJSON(e, "link.labeling.retcat.utils.RetcatREST"))
+                    .header("Content-Type", "application/json;charset=UTF-8").build();
+        }
+    }
+
+    @GET
+    @Path("/info/chronontology")
+    @Produces(MediaType.APPLICATION_JSON + ";charset=UTF-8")
+    public Response getInfoChronOntology(@QueryParam("uri") String uri) {
+        try {
+            JSONObject jsonOut = Retcat_ChronOntology.info(uri);
+            return Response.ok(jsonOut).header("Content-Type", "application/json;charset=UTF-8").build();
+        } catch (Exception e) {
+            return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity(Logging.getMessageJSON(e, "link.labeling.retcat.utils.RetcatREST"))
+                    .header("Content-Type", "application/json;charset=UTF-8").build();
+        }
+    }
+
+    @GET
+    @Path("/query/labelingsystem")
+    @Produces(MediaType.APPLICATION_JSON + ";charset=UTF-8")
+    public Response getQueryResultsLabelingSystem(@QueryParam("query") String searchword, @HeaderParam(HttpHeaders.HOST) String host) {
+        try {
+            JSONArray outArray = new JSONArray();
+            if (searchword.startsWith("uri:")) {
+                outArray.add(Retcat_LabelingSystem.info(searchword.replace("uri:", ""), host));
+                outArray.remove(new JSONObject());
+            } else {
+                outArray = Retcat_LabelingSystem.query(searchword, host);
+            }
+            return Response.ok(outArray).header("Content-Type", "application/json;charset=UTF-8").build();
+        } catch (Exception e) {
+            return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity(Logging.getMessageJSON(e, "link.labeling.retcat.utils.RetcatREST"))
+                    .header("Content-Type", "application/json;charset=UTF-8").build();
+        }
+    }
+
+    @GET
+    @Path("/query/labelingsystem/{vocabulary}")
+    @Produces(MediaType.APPLICATION_JSON + ";charset=UTF-8")
+    public Response getQueryResultsLabelingSystemVocabulary(@QueryParam("query") String searchword, @PathParam("vocabulary") String vocabulary, @HeaderParam(HttpHeaders.HOST) String host) {
+        try {
+            JSONArray outArray = new JSONArray();
+            if (searchword.startsWith("uri:")) {
+                outArray.add(Retcat_LabelingSystem.info(searchword.replace("uri:", ""), host));
+                outArray.remove(new JSONObject());
+            } else {
+                outArray = Retcat_LabelingSystem.queryVocabulary(searchword, host, vocabulary);
+            }
+            return Response.ok(outArray).header("Content-Type", "application/json;charset=UTF-8").build();
+        } catch (Exception e) {
+            return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity(Logging.getMessageJSON(e, "link.labeling.retcat.utils.RetcatREST"))
+                    .header("Content-Type", "application/json;charset=UTF-8").build();
+        }
+    }
+
+    @GET
+    @Path("/info/labelingsystem")
+    @Produces(MediaType.APPLICATION_JSON + ";charset=UTF-8")
+    public Response getInfoLabelingSystem(@QueryParam("uri") String uri, @HeaderParam(HttpHeaders.HOST) String host) {
+        try {
+            JSONObject jsonOut = Retcat_LabelingSystem.info(uri, host);
+            return Response.ok(jsonOut).header("Content-Type", "application/json;charset=UTF-8").build();
+        } catch (Exception e) {
+            return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity(Logging.getMessageJSON(e, "link.labeling.retcat.utils.RetcatREST"))
+                    .header("Content-Type", "application/json;charset=UTF-8").build();
+        }
+    }
     
     @GET
-	@Path("/query/heritagedata/historicengland")
-	@Produces(MediaType.APPLICATION_JSON + ";charset=UTF-8")
-	public Response getQueryResultsHeritagedataHE(@QueryParam("query") String searchword) {
-		try {
-			JSONArray outArray = new JSONArray();
-			if (searchword.startsWith("uri:")) {
-				outArray.add(Retcat_HeritageData.info(searchword.replace("uri:", "")));
-				outArray.remove(new JSONObject());
-			} else {
-				outArray = Retcat_HeritageData.queryHE(searchword);
-			}
-			return Response.ok(outArray).header("Content-Type", "application/json;charset=UTF-8").build();
-		} catch (Exception e) {
-			return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity(Logging.getMessageJSON(e, "link.labeling.retcat.utils.RetcatREST"))
-					.header("Content-Type", "application/json;charset=UTF-8").build();
-		}
-	}
+    @Path("/query/labelinglink")
+    @Produces(MediaType.APPLICATION_JSON + ";charset=UTF-8")
+    public Response getQueryResultsLabelingLink(@QueryParam("query") String searchword) {
+        try {
+            JSONArray outArray = new JSONArray();
+            if (searchword.startsWith("uri:")) {
+                outArray.add(Retcat_LabelingLink.info(searchword.replace("uri:", "")));
+                outArray.remove(new JSONObject());
+            } else {
+                outArray = Retcat_LabelingLink.query(searchword);
+            }
+            return Response.ok(outArray).header("Content-Type", "application/json;charset=UTF-8").build();
+        } catch (Exception e) {
+            return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity(Logging.getMessageJSON(e, "link.labeling.retcat.utils.RetcatREST"))
+                    .header("Content-Type", "application/json;charset=UTF-8").build();
+        }
+    }
 
-	@GET
-	@Path("/query/heritagedata/rcahms")
-	@Produces(MediaType.APPLICATION_JSON + ";charset=UTF-8")
-	public Response getQueryResultsHeritagedataRCAHMS(@QueryParam("query") String searchword) {
-		try {
-			JSONArray outArray = new JSONArray();
-			if (searchword.startsWith("uri:")) {
-				outArray.add(Retcat_HeritageData.info(searchword.replace("uri:", "")));
-				outArray.remove(new JSONObject());
-			} else {
-				outArray = Retcat_HeritageData.queryRCAHMS(searchword);
-			}
-			return Response.ok(outArray).header("Content-Type", "application/json;charset=UTF-8").build();
-		} catch (Exception e) {
-			return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity(Logging.getMessageJSON(e, "link.labeling.retcat.utils.RetcatREST"))
-					.header("Content-Type", "application/json;charset=UTF-8").build();
-		}
-	}
-
-	@GET
-	@Path("/query/heritagedata/rcahmw")
-	@Produces(MediaType.APPLICATION_JSON + ";charset=UTF-8")
-	public Response getQueryResultsHeritagedataRCAHMW(@QueryParam("query") String searchword) {
-		try {
-			JSONArray outArray = new JSONArray();
-			if (searchword.startsWith("uri:")) {
-				outArray.add(Retcat_HeritageData.info(searchword.replace("uri:", "")));
-				outArray.remove(new JSONObject());
-			} else {
-				outArray = Retcat_HeritageData.queryRCAHMW(searchword);
-			}
-			return Response.ok(outArray).header("Content-Type", "application/json;charset=UTF-8").build();
-		} catch (Exception e) {
-			return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity(Logging.getMessageJSON(e, "link.labeling.retcat.utils.RetcatREST"))
-					.header("Content-Type", "application/json;charset=UTF-8").build();
-		}
-	}
-
-	@GET
-	@Path("/info/heritagedata")
-	@Produces(MediaType.APPLICATION_JSON + ";charset=UTF-8")
-	public Response getInfoHeritageData(@QueryParam("uri") String uri) {
-		try {
-			JSONObject jsonOut = Retcat_HeritageData.info(uri);
-			return Response.ok(jsonOut).header("Content-Type", "application/json;charset=UTF-8").build();
-		} catch (Exception e) {
-			return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity(Logging.getMessageJSON(e, "link.labeling.retcat.utils.RetcatREST"))
-					.header("Content-Type", "application/json;charset=UTF-8").build();
-		}
-	}
-    
     @GET
-	@Path("/query/chronontology")
-	@Produces(MediaType.APPLICATION_JSON + ";charset=UTF-8")
-	public Response getQueryResultsChronOntology(@QueryParam("query") String searchword) {
-		try {
-			JSONArray outArray = new JSONArray();
-			if (searchword.startsWith("uri:")) {
-				outArray.add(Retcat_ChronOntology.info(searchword.replace("uri:", "")));
-				outArray.remove(new JSONObject());
-			} else {
-				outArray = Retcat_ChronOntology.query(searchword);
-			}
-			return Response.ok(outArray).header("Content-Type", "application/json;charset=UTF-8").build();
-		} catch (Exception e) {
-			return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity(Logging.getMessageJSON(e, "link.labeling.retcat.utils.RetcatREST"))
-					.header("Content-Type", "application/json;charset=UTF-8").build();
-		}
-	}
-
-	@GET
-	@Path("/info/chronontology")
-	@Produces(MediaType.APPLICATION_JSON + ";charset=UTF-8")
-	public Response getInfoChronOntology(@QueryParam("uri") String uri) {
-		try {
-			JSONObject jsonOut = Retcat_ChronOntology.info(uri);
-			return Response.ok(jsonOut).header("Content-Type", "application/json;charset=UTF-8").build();
-		} catch (Exception e) {
-			return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity(Logging.getMessageJSON(e, "link.labeling.retcat.utils.RetcatREST"))
-					.header("Content-Type", "application/json;charset=UTF-8").build();
-		}
-	}
+    @Path("/info/labelinglink")
+    @Produces(MediaType.APPLICATION_JSON + ";charset=UTF-8")
+    public Response getInfoLabelingLink(@QueryParam("uri") String uri) {
+        try {
+            JSONObject jsonOut = Retcat_LabelingLink.info(uri);
+            return Response.ok(jsonOut).header("Content-Type", "application/json;charset=UTF-8").build();
+        } catch (Exception e) {
+            return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity(Logging.getMessageJSON(e, "link.labeling.retcat.utils.RetcatREST"))
+                    .header("Content-Type", "application/json;charset=UTF-8").build();
+        }
+    }
 
 }
