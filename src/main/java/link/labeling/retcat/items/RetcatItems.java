@@ -11,17 +11,18 @@ public class RetcatItems {
     public static List<RetcatItem> getReferenceThesaurusCatalogue() throws IOException, ResourceNotAvailableException {
         List<RetcatItem> retcatList = new ArrayList();
         // LOCAL LABELING SYSTEM
-        retcatList.add(new RetcatItem(
-                "This Labeling System", //name
-                "This Labeling System vocabularies.", //description
-                "/v1/rtc/query/labelingsystem", //queryURL
-                "/v1/rtc/info/labelingsystem", //labelURL
-                "//{host}/item", //prefix
-                "common reference thesauri (CH)", //group
-                "ls", //type
-                "n/a", //language
-                "high", //quality
-                true)); // is default value?
+        RetcatItem ls = new RetcatItem();
+        ls.setName("This Labeling System");
+        ls.setDescription("This Labeling System vocabularies.");
+        ls.setQueryURL("/v1/rtc/query/labelingsystem");
+        ls.setLabelURL("/v1/rtc/info/labelingsystem");
+        ls.setPrefix("//{host}/item");
+        ls.setGroup("common reference thesauri (CH)");
+        ls.setType("ls");
+        ls.setLanguage("n/a");
+        ls.setQuality("high");
+        ls.setDefaultValue(true);
+        retcatList.add(ls);
         // LABELING SYSTEM INSTANCES
         // labeling.link
         retcatList.add(new RetcatItem(

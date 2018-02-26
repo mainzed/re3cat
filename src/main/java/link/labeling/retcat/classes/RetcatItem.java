@@ -13,7 +13,10 @@ public class RetcatItem {
 	private String quality = "";
 	private boolean defaultValue = false;
 
-	public RetcatItem(String name, String description, String queryURL, String labelURL, String prefix, String group, String type, String language, String quality, boolean defaultValue) {
+	public RetcatItem() {
+	}
+    
+    public RetcatItem(String name, String description, String queryURL, String labelURL, String prefix, String group, String type, String language, String quality, boolean defaultValue) {
 		this.name = name;
 		this.description = description;
 		this.queryURL = queryURL;
