@@ -146,4 +146,15 @@ public class RetcatItems {
         return retcatList;
     }
 
+    public static RetcatItem getRetcatItemByName(String name) throws IOException, ResourceNotAvailableException {
+        List<RetcatItem> catalogue = getReferenceThesaurusCatalogue();
+        for (Object item : catalogue) {
+            RetcatItem tmp = (RetcatItem) item;
+            if (tmp.getName().equals(name)) {
+                return tmp;
+            }
+        }
+        return null;
+    }
+
 }
