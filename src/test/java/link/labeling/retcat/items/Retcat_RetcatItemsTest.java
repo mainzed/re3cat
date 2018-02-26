@@ -49,5 +49,12 @@ public class Retcat_RetcatItemsTest {
         RetcatItem item = RetcatItems.getRetcatItemByName("Heritage Data Historic England");
         assertEquals("Heritage Data Historic England", item.getName());
     }
+    
+    @Test
+    public void testGetDBpediaItemByName() throws Exception {
+        System.out.println("test RetcatItems.getRetcatItemByName() - DBpedia");
+        RetcatItem item = RetcatItems.getRetcatItemByName("DBpedia");
+        assertEquals("DBpedia", item.getName());
+    }
 
 }
