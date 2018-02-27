@@ -12,11 +12,11 @@ import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.HttpHeaders;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
-import javax.ws.rs.core.UriInfo;
 import link.labeling.retcat.log.Logging;
 import link.labeling.retcat.queries.Retcat_ChronOntology;
 import link.labeling.retcat.queries.Retcat_DBpedia;
 import link.labeling.retcat.queries.Retcat_Getty;
+import link.labeling.retcat.queries.Retcat_HTML;
 import link.labeling.retcat.queries.Retcat_HeritageData;
 import link.labeling.retcat.queries.Retcat_LabelingLink;
 import link.labeling.retcat.queries.Retcat_LabelingSystem;
@@ -246,7 +246,7 @@ public class RetcatREST {
                     .header("Content-Type", "application/json;charset=UTF-8").build();
         }
     }
-    
+
     @GET
     @Path("/query/labelinglink")
     @Produces(MediaType.APPLICATION_JSON + ";charset=UTF-8")
@@ -278,7 +278,7 @@ public class RetcatREST {
                     .header("Content-Type", "application/json;charset=UTF-8").build();
         }
     }
-    
+
     @GET
     @Path("/query/dbpedia")
     @Produces(MediaType.APPLICATION_JSON + ";charset=UTF-8")
@@ -304,6 +304,33 @@ public class RetcatREST {
     public Response getInfoDBpedia(@QueryParam("uri") String uri) {
         try {
             JSONObject jsonOut = Retcat_DBpedia.info(uri);
+            return Response.ok(jsonOut).header("Content-Type", "application/json;charset=UTF-8").build();
+        } catch (Exception e) {
+            return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity(Logging.getMessageJSON(e, "link.labeling.retcat.utils.RetcatREST"))
+                    .header("Content-Type", "application/json;charset=UTF-8").build();
+        }
+    }
+
+    @GET
+    @Path("/query/html")
+    @Produces(MediaType.APPLICATION_JSON + ";charset=UTF-8")
+    public Response getQueryResultsHTML(@QueryParam("query") String url) {
+        try {
+            JSONArray outArray = new JSONArray();
+            outArray = Retcat_HTML.query(url);
+            return Response.ok(outArray).header("Content-Type", "application/json;charset=UTF-8").build();
+        } catch (Exception e) {
+            return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity(Logging.getMessageJSON(e, "link.labeling.retcat.utils.RetcatREST"))
+                    .header("Content-Type", "application/json;charset=UTF-8").build();
+        }
+    }
+
+    @GET
+    @Path("/info/html")
+    @Produces(MediaType.APPLICATION_JSON + ";charset=UTF-8")
+    public Response getInfoExtern(@QueryParam("url") String url, @QueryParam("type") String type) {
+        try {
+            JSONObject jsonOut = Retcat_HTML.info(url);
             return Response.ok(jsonOut).header("Content-Type", "application/json;charset=UTF-8").build();
         } catch (Exception e) {
             return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity(Logging.getMessageJSON(e, "link.labeling.retcat.utils.RetcatREST"))
