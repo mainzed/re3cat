@@ -101,6 +101,11 @@ public class RetcatUtils {
         }
         return result;
     }
+    
+    public static String encodeURIUmlaut(String s) {
+        s = s.replaceAll("Ä", "%C3%84").replaceAll("ä", "%C3%A4");
+		return s;
+    }
 
     private static JSONArray sortSuggestionsByLevenshtein(JSONArray in, String q) {
         JSONArray out = new JSONArray();
