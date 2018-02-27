@@ -2,7 +2,6 @@ package link.labeling.retcat.rest;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
-
 import javax.ws.rs.GET;
 import javax.ws.rs.HeaderParam;
 import javax.ws.rs.Path;
@@ -20,6 +19,7 @@ import link.labeling.retcat.queries.Retcat_HTML;
 import link.labeling.retcat.queries.Retcat_HeritageData;
 import link.labeling.retcat.queries.Retcat_LabelingLink;
 import link.labeling.retcat.queries.Retcat_LabelingSystem;
+import link.labeling.retcat.queries.WaybackMachine;
 
 @Path("/rtc")
 public class RetcatREST {
@@ -334,6 +334,18 @@ public class RetcatREST {
             return Response.ok(jsonOut).header("Content-Type", "application/json;charset=UTF-8").build();
         } catch (Exception e) {
             return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity(Logging.getMessageJSON(e, "link.labeling.retcat.utils.RetcatREST"))
+                    .header("Content-Type", "application/json;charset=UTF-8").build();
+        }
+    }
+
+    @GET
+    @Path("/waybacklink")
+    @Produces(MediaType.APPLICATION_JSON + ";charset=UTF-8")
+    public Response getWaybackURL(@QueryParam("url") String url) {
+        try {
+            return Response.ok(WaybackMachine.getURI(url)).header("Content-Type", "application/json;charset=UTF-8").build();
+        } catch (Exception e) {
+            return Response.status(Response.Status.NOT_FOUND).entity(Logging.getMessageJSON(e, "link.labeling.retcat.utils.RetcatREST"))
                     .header("Content-Type", "application/json;charset=UTF-8").build();
         }
     }
