@@ -1,9 +1,9 @@
 language: java
 script:
-  - mvn clean install site exec:java
+  - mvn clean install site
 notifications:
   email:
     recipients:
       - git@linkedgeodesy.org
-    on_success: always
+    on_success: change
     on_failure: always
