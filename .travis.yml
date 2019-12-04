@@ -9,3 +9,7 @@ notifications:
       - git@linkedgeodesy.org
     on_success: change
     on_failure: always
+addons:
+  apt:
+    packages:
+      - oracle-java8-installer
