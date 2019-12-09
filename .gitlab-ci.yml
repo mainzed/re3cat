@@ -23,6 +23,7 @@ pages:
   stage: deploy
   script:
   - cp -r docs/* public/
+  - 'mvn deploy -s ci_settings.xml'
   artifacts:
     paths:
     - public
