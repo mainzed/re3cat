@@ -1,11 +1,14 @@
+include:
+  - template: SAST.gitlab-ci.yml
+  - template: Dependency-Scanning.gitlab-ci.yml
+  - template: License-Management.gitlab-ci.yml
+
 image: maven:3-jdk-8
-# These are the default stages.
-# You don't need to explicitly define them.
-# But you could define any stages you want.
+
 stages:
-  - build
-  - test
   - deploy
+  - test
+  - build
 
 build:
   stage: build
@@ -15,11 +18,11 @@ build:
     when: on_success
     paths:
     - target/*.jar
-    
-deploy:
+
+pages:
+  stage: deploy
   script:
-    - 'cp ci_settings.xml /root/.m2/settings.xml'
-    - 'mvn deploy'
-  only:
-    - master
-  image: maven:3.3.9-jdk-8
+  - cp -r docs/* public/
+  artifacts:
+    paths:
+    - public
