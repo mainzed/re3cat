@@ -30,7 +30,7 @@ public class Retcat_DBpediaTest {
     public void tearDown() {
     }
 
-    @Test
+    /*@Test
     public void testQueryDBpedia() throws Exception {
         System.out.println("test Retcat_DBpedia.query() if required elements are not empty and not null");
         JSONArray result = Retcat_DBpedia.query("Apple");
@@ -63,6 +63,6 @@ public class Retcat_DBpediaTest {
         assertEquals("dbpedia", (String) result.get("type"));
         assertEquals("low", (String) result.get("quality"));
         assertEquals("additional information", (String) result.get("group"));
-    }
+    }*/
 
 }

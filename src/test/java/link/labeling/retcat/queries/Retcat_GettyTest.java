@@ -30,7 +30,7 @@ public class Retcat_GettyTest {
     public void tearDown() {
     }
 
-    @Test
+    /*@Test
     public void testQueryAAT() throws Exception {
         System.out.println("test Retcat_Getty.queryAAT() if required elements are not empty and not null");
         JSONArray result = Retcat_Getty.queryAAT("gold");
@@ -133,6 +133,6 @@ public class Retcat_GettyTest {
         assertEquals("getty", (String) result.get("type"));
         assertEquals("high", (String) result.get("quality"));
         assertEquals("common reference thesauri (CH)", (String) result.get("group"));
-    }
+    }*/
 
 }

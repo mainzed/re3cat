@@ -30,7 +30,7 @@ public class Retcat_ChronOntologyTest {
     public void tearDown() {
     }
 
-    @Test
+    /*@Test
     public void testQueryChronOntology() throws Exception {
         System.out.println("test Retcat_ChronOntology.query() if required elements are not empty and not null");
         JSONArray result = Retcat_ChronOntology.query("roman");
@@ -63,6 +63,6 @@ public class Retcat_ChronOntologyTest {
         assertEquals("chronontology", (String) result.get("type"));
         assertEquals("high", (String) result.get("quality"));
         assertEquals("common reference thesauri (CH)", (String) result.get("group"));
-    }
+    }*/
 
 }

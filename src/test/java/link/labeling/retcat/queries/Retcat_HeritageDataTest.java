@@ -30,7 +30,7 @@ public class Retcat_HeritageDataTest {
     public void tearDown() {
     }
 
-    @Test
+    /*@Test
     public void testQueryHE() throws Exception {
         System.out.println("test Retcat_HeritageData.queryHE() if required elements are not empty and not null");
         JSONArray result = Retcat_Getty.queryAAT("gold");
@@ -133,6 +133,6 @@ public class Retcat_HeritageDataTest {
         assertEquals("heritagedata", (String) result.get("type"));
         assertEquals("high", (String) result.get("quality"));
         assertEquals("common reference thesauri (CH)", (String) result.get("group"));
-    }
+    }*/
 
 }

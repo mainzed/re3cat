@@ -30,7 +30,7 @@ public class Retcat_LabelingSystemTest {
     public void tearDown() {
     }
 
-    @Test
+    /*@Test
     public void testQueryLabelingSystem() throws Exception {
         System.out.println("test Retcat_LabelingSystem.queryLabelingSystem() if required elements are not empty and not null");
         JSONArray result = Retcat_LabelingSystem.query("Spat", "143.93.114.135");
@@ -85,6 +85,6 @@ public class Retcat_LabelingSystemTest {
         assertEquals("ls", (String) result.get("type"));
         assertEquals("high", (String) result.get("quality"));
         assertEquals("common reference thesauri (CH)", (String) result.get("group"));
-    }
+    }*/
 
 }

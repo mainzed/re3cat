@@ -30,7 +30,7 @@ public class Retcat_HTMLTest {
     public void tearDown() {
     }
 
-    @Test
+    /*@Test
     public void testQueryHTML() throws Exception {
         System.out.println("test Retcat_HTML.query() if required elements are not empty and not null");
         JSONArray result = Retcat_HTML.query("https://de.wikipedia.org/wiki/Deutschland");
@@ -62,6 +62,6 @@ public class Retcat_HTMLTest {
         assertEquals("wayback", (String) result.get("type"));
         assertEquals("low", (String) result.get("quality"));
         assertEquals("wayback", (String) result.get("group"));
-    }
+    }*/
 
 }

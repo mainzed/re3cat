@@ -30,10 +30,10 @@ public class Retcat_LabelingLinkTest {
     public void tearDown() {
     }
 
-    @Test
+    /*@Test
     public void testQueryLabelingSystem() throws Exception {
         System.out.println("TBD - test Retcat_LabelingLink.queryLabelingSystem() if required elements are not empty and not null");
-        /*JSONArray result = Retcat_LabelingLink.queryLabelingSystem("?TBD?");
+        JSONArray result = Retcat_LabelingLink.queryLabelingSystem("?TBD?");
         for (Object item : result) {
             JSONObject tmp = (JSONObject) item;
             assertEquals(13, tmp.size());
@@ -49,13 +49,13 @@ public class Retcat_LabelingLinkTest {
             assertNotNull((String) tmp.get("quality"));
             assertNotSame("", (String) tmp.get("group"));
             assertNotNull((String) tmp.get("group"));
-        }*/
+        }
     }
 
     @Test
     public void testQueryLabelingSystemVocabulary() throws Exception {
         System.out.println("TBD - test Retcat_LabelingLink.queryLabelingSystemVocabulary() if required elements are not empty and not null");
-        /*JSONArray result = Retcat_LabelingLink.queryLabelingSystemVocabulary("?TBD?", "?TBD?");
+        JSONArray result = Retcat_LabelingLink.queryLabelingSystemVocabulary("?TBD?", "?TBD?");
         for (Object item : result) {
             JSONObject tmp = (JSONObject) item;
             assertEquals(13, tmp.size());
@@ -71,20 +71,20 @@ public class Retcat_LabelingLinkTest {
             assertNotNull((String) tmp.get("quality"));
             assertNotSame("", (String) tmp.get("group"));
             assertNotNull((String) tmp.get("group"));
-        }*/
+        }
     }
 
     @Test
     public void testInfoLabelingSystem() throws Exception {
         System.out.println("TBD - test Retcat_LabelingLink.info() for Labeling System if required resource is ?TBD?");
-        /*JSONObject result = Retcat_LabelingLink.info("http://labeling.link/item/label/?TBD?");
+        JSONObject result = Retcat_LabelingLink.info("http://labeling.link/item/label/?TBD?");
         assertEquals(13, result.size());
         assertEquals("http://labeling.link/item/label/?TBD?", (String) result.get("uri"));
         assertEquals("?TBD?", (String) result.get("label"));
         assertEquals("?TBD?", (String) result.get("scheme"));
         assertEquals("labelinglink", (String) result.get("type"));
         assertEquals("high", (String) result.get("quality"));
-        assertEquals("common reference thesauri (CH)", (String) result.get("group"));*/
-    }
+        assertEquals("common reference thesauri (CH)", (String) result.get("group"));
+    }*/
 
 }
