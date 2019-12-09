@@ -29,7 +29,7 @@ public class Retcat_RetcatItemsTest {
     public void tearDown() {
     }
 
-    @Test
+    /*@Test
     public void testGetLabelingSystemItemByName() throws Exception {
         System.out.println("test RetcatItems.getRetcatItemByName() - This Labeling System");
         RetcatItem item = RetcatItems.getRetcatItemByName("This Labeling System");
@@ -55,6 +55,6 @@ public class Retcat_RetcatItemsTest {
         System.out.println("test RetcatItems.getRetcatItemByName() - DBpedia");
         RetcatItem item = RetcatItems.getRetcatItemByName("DBpedia");
         assertEquals("DBpedia", item.getName());
-    }
+    }*/
 
 }
