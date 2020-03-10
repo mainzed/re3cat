@@ -13,13 +13,13 @@
 	<version>1.0-SNAPSHOT</version>
 	<packaging>jar</packaging>
 	
-	<name>labeling system retcat library</name>
-	<description>labeling system retcat library</description>
-	<url>https://github.com/mainzed/labelingsystem-retcat.git</url>
+	<name>re3cat library</name>
+	<description>java library for the REgistry for REference thesaurus catalogue REpositories</description>
+	<url>https://github.com/mainzed/re3cat.git</url>
 	<licenses>
 		<license>
 			<name>MIT License</name>
-			<url>https://github.com/mainzed/labelingsystem-retcat/blob/master/LICENSE</url>
+			<url>https://github.com/mainzed/re3cat/blob/master/LICENSE</url>
 			<distribution>repo</distribution>
 		</license>
 	</licenses>
@@ -28,7 +28,7 @@
 		<url>http://mainzed.org</url>
 	</organization>
 	<scm>
-		<connection>scm:git:https://github.com/mainzed/labelingsystem-retcat.git</connection>
+		<connection>scm:git:https://github.com/mainzed/re3cat.git</connection>
 	</scm>
 	<developers>
 		<developer>
