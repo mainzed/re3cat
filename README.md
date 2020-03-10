@@ -1,4 +1,6 @@
-# Labeling System RetCat library
+# REgistry for REference thesaurus catalogue REpositories (re3cat)
+
+java library for the REgistry for REference thesaurus catalogue REpositories
 
 [![build](https://travis-ci.org/mainzed/labelingsystem-retcat.svg?branch=master)](https://travis-ci.org/mainzed/labelingsystem-retcat) [![version](https://img.shields.io/badge/version-1.0--SNAPSHOT-green.svg)](#)  [![java](https://img.shields.io/badge/jdk-1.8-red.svg)](#)  [![maven](https://img.shields.io/badge/maven-3.5.0-orange.svg)](#) [![output](https://img.shields.io/badge/output-jar-red.svg)](#)  [![docs](https://img.shields.io/badge/apidoc-xxx-blue.svg)](#)  [![license](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/mainzed/labelingsystem-retcat/blob/master/LICENSE)
 
